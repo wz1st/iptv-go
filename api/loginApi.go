@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"path/filepath"
 
@@ -44,7 +45,8 @@ func GetBg(c *gin.Context) {
 		c.String(http.StatusOK, "")
 		return
 	}
-	dir := "./images"
+	dir := bootstrap.CONFIG_PATH + "/images"
+	fmt.Println(dir)
 	files, err := filepath.Glob(filepath.Join(dir, "*.png"))
 	if err != nil {
 		c.String(http.StatusOK, "")

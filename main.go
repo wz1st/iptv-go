@@ -22,7 +22,7 @@ func main() {
 		fmt.Println("配置文件出错..")
 		return
 	}
-	if !bootstrap.BuildAPK(*build, *javaBin) {
+	if !bootstrap.BuildAPK(*conf, *build, *javaBin) {
 		fmt.Println("APK编译错误")
 		return
 	}
